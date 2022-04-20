@@ -8,6 +8,8 @@ RUN apt-get install -y tree htop tmux vim git rsync wget curl \
       cmake ninja-build clang build-essential pkg-config autotools-dev bison flex \
       cpio unzip file bc libncurses-dev asciidoc graphviz python3-matplotlib ccache
 
+RUN apt-get install -y qemu qemu-utils qemu-user qemu-user-binfmt qemu-system-arm
+
 # Add user 'br' with password 'br'
 RUN useradd --create-home --shell /bin/bash -p "$(openssl passwd -1 br)" br
 USER br
